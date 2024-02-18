@@ -7,7 +7,6 @@ metadata:
 spec:
   hosts:
     - app.easydevop.com
-    - second-app
   gateways:
     - api
   http:
