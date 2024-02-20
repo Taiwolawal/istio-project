@@ -19,12 +19,9 @@ For cert-maneger to work correctly `--set meshConfig.ingressSelector=gateway --s
 
 Ensure to update meshconfig in the istiod.yaml to allow easy installation of cert-manager so as to be able to resolve http01 challenge from lets encrypt
 
-![alt text](<png/global.png)
+![alt text](global-2.png)
 
 ![alt text](<png/Pasted Graphic 24.png>)
 
-
-
 ![alt text](<png/Pasted Graphic 40.png>)
 
-![alt text](global-2.png)
