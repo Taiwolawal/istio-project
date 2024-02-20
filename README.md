@@ -76,3 +76,14 @@ Same with if we want all traffic to move to v2 only
 ![alt text](<png/15.png>)
 
 ![alt text](<png/Pasted Graphic 47.png>)
+
+# Istio Ingress Gateway:
+We will expose application running in Kubernetes  to the internet using istio ingress gateway. Install using helm
+
+![alt text](<png/Pasted Graphic 27.png>)
+
+![alt text](<png/Pasted Graphic 32.png>)
+
+![alt text](<png/Pasted Graphic 49.png>)
+
+![alt text](<png/gateway-8698d7ddbf-16d8r.png>)
