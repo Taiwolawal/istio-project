@@ -65,3 +65,12 @@ Lets exec into the client and use curl to hit our first app service in the stagi
 
 ![alt text](image.png)
 
+Now lets edit the virtual service to ensure traffic goes to v1 and v2 equally
+
+![alt text](<kind VirtualService-1.png>)
+
+![alt text](<virtualservice.networking.istto.tofirst-app confiqured.png>)
+
+![alt text](<virtualservice.networking.istto.tofirst-app confiqured-1.png>)
+
+Same with if we want all traffic to move to v2 only
