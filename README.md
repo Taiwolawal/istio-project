@@ -27,3 +27,4 @@ Ensure to update meshconfig in the istiod.yaml to allow easy installation of cer
 
 ![alt text](<png/Pasted Graphic 40.png>)
 
+![alt text](global-2.png)
