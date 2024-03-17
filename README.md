@@ -87,3 +87,7 @@ We will expose application running in Kubernetes  to the internet using istio in
 ![alt text](<png/Pasted Graphic 49.png>)
 
 ![alt text](<png/gateway-8698d7ddbf-16d8r.png>)
+
+Now lets deploy another application to production namespace making use of hostname to access it. We will have to work on virtualservice, gateway respectively and lastly cert-manager to secure application with TLS certificate
+
+![alt text](<png/Pasted Graphic.png>)
