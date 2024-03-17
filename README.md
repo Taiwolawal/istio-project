@@ -88,6 +88,33 @@ We will expose application running in Kubernetes  to the internet using istio in
 
 ![alt text](<png/gateway-8698d7ddbf-16d8r.png>)
 
-Now lets deploy another application to production namespace making use of hostname to access it. We will have to work on virtualservice, gateway respectively and lastly cert-manager to secure application with TLS certificate
+Now let's deploy another application to the production namespace making use of hostname to access it. We will have to work on virtualservice, gateway respectively and lastly, cert-manager to secure application with TLS certificate
 
 ![alt text](<png/Pasted Graphic.png>)
+
+<img width="638" alt="created" src="https://github.com/Taiwolawal/istio-project/assets/50557587/69a2f6a4-a44b-41e6-bff3-3eedb447b0f2">
+
+In case you do not have a domain to test with, you can use the host header format in the screenshot below
+
+<img width="1088" alt="Pasted Graphic 51" src="https://github.com/Taiwolawal/istio-project/assets/50557587/05d6cfcf-794c-4448-a351-1ade1f09d2c1">
+
+We can update our domain (if you own one) with the load balancer in Route53 records
+
+![Host name](https://github.com/Taiwolawal/istio-project/assets/50557587/9d3b1fe9-98ed-4de7-b668-126ae050ad97)
+
+<img width="1217" alt="Pasted Graphic 52" src="https://github.com/Taiwolawal/istio-project/assets/50557587/e3dfe01d-76e0-461d-a333-2e792a6d8a32">
+
+# Cert-Manager
+We will install cert-manager and use letsencrypt to automatically obtain TLS certificates and secure our API
+
+<img width="1246" alt="Pasted Graphic 36" src="https://github.com/Taiwolawal/istio-project/assets/50557587/a122b8ba-f624-447e-b6c6-91ecea3353f4">
+
+Ensure its deployed in istio-ingress namespace where you have the gateway pod
+
+![apiVersion cert-manager iov1](https://github.com/Taiwolawal/istio-project/assets/50557587/f7d29bb4-5d6f-4be7-b631-f66a8a028811)
+
+When you create these certificate, the cert-manager will obtain a certificate from letsencrypt and store it in kubernetes secret. The certificate is valid for 90 days and the cert-manager will automatically renew and update the secret
+
+<img width="736" alt="Pasted Graphic 53" src="https://github.com/Taiwolawal/istio-project/assets/50557587/66b26201-d44b-4615-ac2f-9c3cddaefe51">
+
+
