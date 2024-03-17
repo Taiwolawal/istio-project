@@ -173,3 +173,19 @@ Now we can create a servicemonitor and use the endpoint and metrics port name, t
 <img width="1093" alt="Targets" src="https://github.com/Taiwolawal/istio-project/assets/50557587/80ad60b4-43a7-4dd0-85b4-14be564743e5">
 
 <img width="1026" alt="Pasted Graphic 81" src="https://github.com/Taiwolawal/istio-project/assets/50557587/64ecb76b-1705-49a2-8fbc-ac6085c1a0ba">
+
+Now lets connect to grafana
+
+<img width="854" alt="Pasted Graphic 83" src="https://github.com/Taiwolawal/istio-project/assets/50557587/0034ad1e-664b-4254-b425-4ddf48e8ef6f">
+
+<img width="1116" alt="Welcome to Grafana" src="https://github.com/Taiwolawal/istio-project/assets/50557587/1a219ce4-eecf-4ad5-b5b1-191e5671f34e">
+
+Use Itio workload dashboard
+
+<img width="1094" alt="Import dashboard" src="https://github.com/Taiwolawal/istio-project/assets/50557587/02419c91-dac4-4cf9-8f66-84f5e1e3e410">
+
+<img width="1425" alt="Pasted Graphic 86" src="https://github.com/Taiwolawal/istio-project/assets/50557587/d2112c53-06f6-4548-b381-42036d8f879d">
+
+<img width="1151" alt="Pasted Graphic 93" src="https://github.com/Taiwolawal/istio-project/assets/50557587/46de45fb-fd1c-4c34-81bc-8ffa535680cf">
+
+
