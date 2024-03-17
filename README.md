@@ -90,7 +90,8 @@ We will expose application running in Kubernetes  to the internet using istio in
 
 Now let's deploy another application to the production namespace making use of hostname to access it. We will have to work on virtualservice, gateway respectively and lastly, cert-manager to secure application with TLS certificate
 
-![alt text](<png/Pasted Graphic.png>)
+![Pasted Graphic 1](https://github.com/Taiwolawal/istio-project/assets/50557587/a0bc4865-fb58-48d7-b3b0-be08a91e95ac)
+
 
 <img width="638" alt="created" src="https://github.com/Taiwolawal/istio-project/assets/50557587/69a2f6a4-a44b-41e6-bff3-3eedb447b0f2">
 
@@ -117,4 +118,58 @@ When you create these certificate, the cert-manager will obtain a certificate fr
 
 <img width="736" alt="Pasted Graphic 53" src="https://github.com/Taiwolawal/istio-project/assets/50557587/66b26201-d44b-4615-ac2f-9c3cddaefe51">
 
+Now, we need to update the gateway file with port 443
 
+![- port](https://github.com/Taiwolawal/istio-project/assets/50557587/4963cabb-7a31-4879-a94e-e2633d8ba7fd)
+
+Now let's apply the gateway file and confirm if the certificate has been issued
+
+<img width="684" alt="Pasted Graphic 55" src="https://github.com/Taiwolawal/istio-project/assets/50557587/83f422da-993f-4354-b2cf-b9f16b7491e2">
+
+<img width="684" alt="Pasted Graphic 55" src="https://github.com/Taiwolawal/istio-project/assets/50557587/dd63bd47-d3a3-4251-9b60-e31f098db859">
+
+<img width="1006" alt="Pasted Graphic 58" src="https://github.com/Taiwolawal/istio-project/assets/50557587/711799c5-1bcc-44e3-9ccf-bb7b86cb7ef3">
+
+Now lets deploy prometheus and grafana for monitoring and visualization.
+
+<img width="844" alt="Pasted Graphic 30" src="https://github.com/Taiwolawal/istio-project/assets/50557587/48eb9f64-4dd6-4f10-ad26-9313ccb7d415">
+
+<img width="1341" alt="Pasted Graphic 31" src="https://github.com/Taiwolawal/istio-project/assets/50557587/bfef5d12-66ec-498e-a691-23d4efab41aa">
+
+<img width="1139" alt="Pasted Graphic 34" src="https://github.com/Taiwolawal/istio-project/assets/50557587/cbd2159a-3094-4207-b5f2-6dd546a62d03">
+
+To monitor istio sidecar, let's create a pod monitor and use istio sidecar label and use a named port
+
+<img width="698" alt="readinessProbe" src="https://github.com/Taiwolawal/istio-project/assets/50557587/d5e064b6-cb4e-42dd-92cf-4bc14656d749">
+
+<img width="997" alt="Pasted Graphic 60" src="https://github.com/Taiwolawal/istio-project/assets/50557587/7dfee701-aa75-4c46-998c-e6021f930a48">
+
+![kind PodMonitor](https://github.com/Taiwolawal/istio-project/assets/50557587/04665409-9097-4374-bc1d-fc23ebe08f04)
+
+<img width="838" alt="Pasted Graphic 66" src="https://github.com/Taiwolawal/istio-project/assets/50557587/677e4a24-b62d-465d-b68a-b1b9bae7798c">
+
+<img width="1365" alt="Pasted Graphic 67" src="https://github.com/Taiwolawal/istio-project/assets/50557587/2ea17104-b1bc-46f3-8c57-6f50dd476917">
+
+<img width="1053" alt="Pasted Graphic 68" src="https://github.com/Taiwolawal/istio-project/assets/50557587/e6c8df19-b047-4775-97d9-bbfa3693530a">
+
+Now lets monitor ingress also
+
+<img width="893" alt="Pasted Graphic 69" src="https://github.com/Taiwolawal/istio-project/assets/50557587/8980ad93-bfa0-4398-9eb4-484236244725">
+
+<img width="685" alt="Pasted Graphic 70" src="https://github.com/Taiwolawal/istio-project/assets/50557587/337ad850-18c0-41a8-95ba-5c50afe39a94">
+
+In this case, we have a port but the name is missing so we cannot use podmonitor, instead you can create a service and a service monitor to target this port.
+
+Lets define a kubernetes service that only uses prometheus port and give it a name
+
+![Pasted Graphic 3](https://github.com/Taiwolawal/istio-project/assets/50557587/4873a26b-dc9d-40ce-9af4-33526f65b906)
+
+Now we can create a servicemonitor and use the endpoint and metrics port name, this is a useful workwround we dont have a port name and not able to add to it but still want to monitor the application with prometheus.
+
+<img width="770" alt="192 168 16 45" src="https://github.com/Taiwolawal/istio-project/assets/50557587/18566c3f-7c65-48e6-9a0e-0b714084bb36">
+
+<img width="439" alt="k apply -f gateway-service-monitor yaml" src="https://github.com/Taiwolawal/istio-project/assets/50557587/91b391ca-7100-4b08-80c7-2749805ce932">
+
+<img width="1093" alt="Targets" src="https://github.com/Taiwolawal/istio-project/assets/50557587/80ad60b4-43a7-4dd0-85b4-14be564743e5">
+
+<img width="1026" alt="Pasted Graphic 81" src="https://github.com/Taiwolawal/istio-project/assets/50557587/64ecb76b-1705-49a2-8fbc-ac6085c1a0ba">
