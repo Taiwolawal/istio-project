@@ -110,20 +110,19 @@ We will install cert-manager and use letsencrypt to automatically obtain TLS cer
 
 <img width="1246" alt="Pasted Graphic 36" src="https://github.com/Taiwolawal/istio-project/assets/50557587/a122b8ba-f624-447e-b6c6-91ecea3353f4">
 
-Ensure its deployed in istio-ingress namespace where you have the gateway pod
-
 To automatically obtain TLS certificate from Letsencrypt we need to creat a cluster issuer. Ensure you specify the ingress class to use solve http01 challenge
 
 When you create these certificate, the cert-manager will obtain a certificate from letsencrypt and store it in kubernetes secret. The certificate is valid for 90 days and the cert-manager will automatically renew and update the secret
 
 ![image](https://github.com/Taiwolawal/istio-project/assets/50557587/0d06ce3d-2807-409b-b1b1-b634f3661b72)
 
+Ensure the certificate is deployed in istio-ingress namespace where you have the gateway pod
 
 ![apiVersion cert-manager iov1](https://github.com/Taiwolawal/istio-project/assets/50557587/f7d29bb4-5d6f-4be7-b631-f66a8a028811)
 
 <img width="736" alt="Pasted Graphic 53" src="https://github.com/Taiwolawal/istio-project/assets/50557587/66b26201-d44b-4615-ac2f-9c3cddaefe51">
 
-Now, we need to update the gateway file with port 443
+Now to secure the API, we need to update the gateway file with port 443 and use https protocol and also specify the secret name that was created by the certificate resource
 
 ![- port](https://github.com/Taiwolawal/istio-project/assets/50557587/4963cabb-7a31-4879-a94e-e2633d8ba7fd)
 
@@ -143,7 +142,7 @@ Now lets deploy prometheus and grafana for monitoring and visualization.
 
 <img width="1139" alt="Pasted Graphic 34" src="https://github.com/Taiwolawal/istio-project/assets/50557587/cbd2159a-3094-4207-b5f2-6dd546a62d03">
 
-To monitor istio sidecar, let's create a pod monitor and use istio sidecar label and use a named port
+To monitor istio, let's create a pod monitor and use istio sidecar labels. To create a podmonitor prometheus object we need a named port ``http-envoy-prom`` and also select the pods based on the label such as ``ìstio:monitor``. Based on this two we can start monitoring istio service mesh
 
 <img width="698" alt="readinessProbe" src="https://github.com/Taiwolawal/istio-project/assets/50557587/d5e064b6-cb4e-42dd-92cf-4bc14656d749">
 
@@ -157,15 +156,15 @@ To monitor istio sidecar, let's create a pod monitor and use istio sidecar label
 
 <img width="1053" alt="Pasted Graphic 68" src="https://github.com/Taiwolawal/istio-project/assets/50557587/e6c8df19-b047-4775-97d9-bbfa3693530a">
 
-Now lets monitor ingress also
+Now lets  monitor ingress gateway also
 
 <img width="893" alt="Pasted Graphic 69" src="https://github.com/Taiwolawal/istio-project/assets/50557587/8980ad93-bfa0-4398-9eb4-484236244725">
 
 <img width="685" alt="Pasted Graphic 70" src="https://github.com/Taiwolawal/istio-project/assets/50557587/337ad850-18c0-41a8-95ba-5c50afe39a94">
 
-In this case, we have a port but the name is missing so we cannot use podmonitor, instead you can create a service and a service monitor to target this port.
+In this case, we have a port but the name is missing so we cannot use podmonitor since we need a named port, instead we can create a service and a service monitor to target this port.
 
-Lets define a kubernetes service that only uses prometheus port and give it a name
+Lets define a kubernetes service that only uses prometheus port ``15090`` and give it a name ``metrics``. Now lets create a servicemonitor and use the endpoint and the metrics port name
 
 ![Pasted Graphic 3](https://github.com/Taiwolawal/istio-project/assets/50557587/4873a26b-dc9d-40ce-9af4-33526f65b906)
 
