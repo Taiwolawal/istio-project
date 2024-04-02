@@ -194,4 +194,18 @@ Use Itio workload dashboard
 
 <img width="1151" alt="Pasted Graphic 93" src="https://github.com/Taiwolawal/istio-project/assets/50557587/46de45fb-fd1c-4c34-81bc-8ffa535680cf">
 
+<img width="1100" alt="Pasted Graphic 35" src="https://github.com/Taiwolawal/istio-project/assets/50557587/dbd84652-e897-48c1-80b0-d74c62226b4a">
+
+<img width="808" alt="Pasted Graphic 87" src="https://github.com/Taiwolawal/istio-project/assets/50557587/1ef6e9d5-5795-471d-a60e-a7e22e55171b">
+
+<img width="914" alt="Pasted Graphic 88" src="https://github.com/Taiwolawal/istio-project/assets/50557587/a928fd60-229b-4fbe-a46f-b76c37ba869c">
+
+<img width="1424" alt="Pasted Graphic 89" src="https://github.com/Taiwolawal/istio-project/assets/50557587/6c98d3c5-c4e9-4f90-8f57-bd6cf1601f02">
+
+<img width="1069" alt="Log in Kiali" src="https://github.com/Taiwolawal/istio-project/assets/50557587/298212ab-626b-4af6-8f3d-6869e4ef1dd9">
+
+<img width="723" alt="Pasted Graphic 91" src="https://github.com/Taiwolawal/istio-project/assets/50557587/ba0d4a77-92f2-48ad-a4b8-8c4b7cfc7d66">
+
+<img width="720" alt="Pasted Graphic 92" src="https://github.com/Taiwolawal/istio-project/assets/50557587/802d4042-f4cc-49ee-9cc4-36ee89678d02">
+
 
