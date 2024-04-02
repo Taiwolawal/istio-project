@@ -112,11 +112,14 @@ We will install cert-manager and use letsencrypt to automatically obtain TLS cer
 
 Ensure its deployed in istio-ingress namespace where you have the gateway pod
 
-![apiVersion cert-manager iov1](https://github.com/Taiwolawal/istio-project/assets/50557587/f7d29bb4-5d6f-4be7-b631-f66a8a028811)
-
 To automatically obtain TLS certificate from Letsencrypt we need to creat a cluster issuer. Ensure you specify the ingress class to use solve http01 challenge
 
 When you create these certificate, the cert-manager will obtain a certificate from letsencrypt and store it in kubernetes secret. The certificate is valid for 90 days and the cert-manager will automatically renew and update the secret
+
+![image](https://github.com/Taiwolawal/istio-project/assets/50557587/0d06ce3d-2807-409b-b1b1-b634f3661b72)
+
+
+![apiVersion cert-manager iov1](https://github.com/Taiwolawal/istio-project/assets/50557587/f7d29bb4-5d6f-4be7-b631-f66a8a028811)
 
 <img width="736" alt="Pasted Graphic 53" src="https://github.com/Taiwolawal/istio-project/assets/50557587/66b26201-d44b-4615-ac2f-9c3cddaefe51">
 
