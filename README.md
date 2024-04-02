@@ -44,7 +44,7 @@ We have two deployments to simulate canary with each one having label version "v
 To handle managing and shifting traffic, we make use of some istio custom resources
 
 # DestinationRule: 
-Let you define the how you want to route your traffic using subsets and specifying appropriate labels and the service 
+Lets you define  how you want to route your traffic using subsets and specifying appropriate labels and the service 
 
 ![alt text](<png/You, 2 days ago  1 author (You).png>)
 
@@ -53,7 +53,7 @@ Lets you define how you want to route traffic to different versions using http o
 
 ![alt text](<png/kind VirtualService.png>)
 
-The screenshot above just show all traffic will go the v1 version. Lets run the app-01 folder to deploy the application and explore how the traffic is covered. To test, we we used a client inside kubernetes which also has a sidecar 
+The screenshot above just show all traffic will go the v1 version. Lets run the app-01 folder to deploy the application and explore how the traffic is covered. To test, we  used a client inside kubernetes which also has a sidecar 
 
 ![alt text](<png/Pasted Graphic 7.png>)
 
@@ -88,7 +88,7 @@ We will expose application running in Kubernetes  to the internet using istio in
 
 ![alt text](<png/gateway-8698d7ddbf-16d8r.png>)
 
-Now let's deploy another application to the production namespace making use of hostname to access it. We will have to work on virtualservice, gateway respectively and lastly, cert-manager to secure application with TLS certificate
+Now let's deploy another application to the production namespace making use of DNS name to access it. We will have to work on virtualservice, gateway respectively and lastly, cert-manager to secure application with TLS certificate
 
 ![Pasted Graphic 1](https://github.com/Taiwolawal/istio-project/assets/50557587/a0bc4865-fb58-48d7-b3b0-be08a91e95ac)
 
@@ -99,7 +99,7 @@ In case you do not have a domain to test with, you can use the host header forma
 
 <img width="1088" alt="Pasted Graphic 51" src="https://github.com/Taiwolawal/istio-project/assets/50557587/05d6cfcf-794c-4448-a351-1ade1f09d2c1">
 
-We can update our domain (if you own one) with the load balancer in Route53 records
+We can update our domain name (if you own one) with the load balancer in Route53 records
 
 ![Host name](https://github.com/Taiwolawal/istio-project/assets/50557587/9d3b1fe9-98ed-4de7-b668-126ae050ad97)
 
@@ -113,6 +113,8 @@ We will install cert-manager and use letsencrypt to automatically obtain TLS cer
 Ensure its deployed in istio-ingress namespace where you have the gateway pod
 
 ![apiVersion cert-manager iov1](https://github.com/Taiwolawal/istio-project/assets/50557587/f7d29bb4-5d6f-4be7-b631-f66a8a028811)
+
+To automatically obtain TLS certificate from Letsencrypt we need to creat a cluster issuer. Ensure you specify the ingress class to use solve http01 challenge
 
 When you create these certificate, the cert-manager will obtain a certificate from letsencrypt and store it in kubernetes secret. The certificate is valid for 90 days and the cert-manager will automatically renew and update the secret
 

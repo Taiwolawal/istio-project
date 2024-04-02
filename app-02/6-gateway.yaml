@@ -14,6 +14,24 @@ spec:
         protocol: HTTP
       hosts:
         - app.easydevop.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
       # tls:
       #  httpsRedirect: true (To enforce all traffic to always use TLS)
     - port:
