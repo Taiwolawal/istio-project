@@ -170,6 +170,8 @@ Lets define a kubernetes service that only uses prometheus port ``15090`` and gi
 
 Now we can create a servicemonitor and use the endpoint and metrics port name, this is a useful workwround we dont have a port name and not able to add to it but still want to monitor the application with prometheus.
 
+![image](https://github.com/Taiwolawal/istio-project/assets/50557587/61de3913-cc3a-4dd5-b162-069432ad9131)
+
 <img width="770" alt="192 168 16 45" src="https://github.com/Taiwolawal/istio-project/assets/50557587/18566c3f-7c65-48e6-9a0e-0b714084bb36">
 
 <img width="439" alt="k apply -f gateway-service-monitor yaml" src="https://github.com/Taiwolawal/istio-project/assets/50557587/91b391ca-7100-4b08-80c7-2749805ce932">
