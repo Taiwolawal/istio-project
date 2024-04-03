@@ -142,7 +142,7 @@ Now lets deploy prometheus and grafana for monitoring and visualization.
 
 <img width="1139" alt="Pasted Graphic 34" src="https://github.com/Taiwolawal/istio-project/assets/50557587/cbd2159a-3094-4207-b5f2-6dd546a62d03">
 
-To monitor istio, let's create a pod monitor and use istio sidecar labels. To create a podmonitor prometheus object we need a named port ``http-envoy-prom`` and also select the pods based on the label such as ``ìstio:monitor``. Based on this two we can start monitoring istio service mesh
+To monitor istio, let's create a pod monitor and use istio sidecar labels. To create a podmonitor prometheus object we need a named pod ``http-envoy-prom`` and also select the pods based on the label such as ``ìstio:monitor``. Based on this two we can start monitoring istio service mesh
 
 <img width="698" alt="readinessProbe" src="https://github.com/Taiwolawal/istio-project/assets/50557587/d5e064b6-cb4e-42dd-92cf-4bc14656d749">
 
@@ -168,7 +168,7 @@ Lets define a kubernetes service that only uses prometheus port ``15090`` and gi
 
 ![Pasted Graphic 3](https://github.com/Taiwolawal/istio-project/assets/50557587/4873a26b-dc9d-40ce-9af4-33526f65b906)
 
-Now we can create a servicemonitor and use the endpoint and metrics port name, this is a useful workwround we dont have a port name and not able to add to it but still want to monitor the application with prometheus.
+Now we can create a servicemonitor and use the endpoint and metrics port name, this is a useful workaround when we dont have a port name and not able to add to it but still want to monitor the application with prometheus.
 
 ![image](https://github.com/Taiwolawal/istio-project/assets/50557587/61de3913-cc3a-4dd5-b162-069432ad9131)
 
@@ -180,13 +180,14 @@ Now we can create a servicemonitor and use the endpoint and metrics port name, t
 
 <img width="1026" alt="Pasted Graphic 81" src="https://github.com/Taiwolawal/istio-project/assets/50557587/64ecb76b-1705-49a2-8fbc-ac6085c1a0ba">
 
+
 Now lets connect to grafana
 
 <img width="854" alt="Pasted Graphic 83" src="https://github.com/Taiwolawal/istio-project/assets/50557587/0034ad1e-664b-4254-b425-4ddf48e8ef6f">
 
 <img width="1116" alt="Welcome to Grafana" src="https://github.com/Taiwolawal/istio-project/assets/50557587/1a219ce4-eecf-4ad5-b5b1-191e5671f34e">
 
-Use Itio workload dashboard
+Use Istio workload dashboard
 
 <img width="1094" alt="Import dashboard" src="https://github.com/Taiwolawal/istio-project/assets/50557587/02419c91-dac4-4cf9-8f66-84f5e1e3e410">
 
@@ -195,6 +196,8 @@ Use Itio workload dashboard
 <img width="1151" alt="Pasted Graphic 93" src="https://github.com/Taiwolawal/istio-project/assets/50557587/46de45fb-fd1c-4c34-81bc-8ffa535680cf">
 
 <img width="1100" alt="Pasted Graphic 35" src="https://github.com/Taiwolawal/istio-project/assets/50557587/dbd84652-e897-48c1-80b0-d74c62226b4a">
+
+Lets Deploy Kiali to visualize the service topology inside Kubernetes
 
 <img width="808" alt="Pasted Graphic 87" src="https://github.com/Taiwolawal/istio-project/assets/50557587/1ef6e9d5-5795-471d-a60e-a7e22e55171b">
 
